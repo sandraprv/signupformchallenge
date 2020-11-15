@@ -2,7 +2,6 @@ const form = document.getElementById("form");
 const inputs = document.getElementsByTagName("input");
 var arr = [...inputs];
 
-
 form.addEventListener("submit", (event) => {
 
   for (var i = 0; i < arr.length; i++) {
@@ -12,8 +11,11 @@ form.addEventListener("submit", (event) => {
     } else {
       arr[i].classList.remove("error");
       arr[i].nextElementSibling.classList.remove("is-visible");
-    }
   }
   event.preventDefault();
+    form.reset()
+    $(".form input").removeClass("error");
+    $(".form label").removeClass("is-visible");
+};
 
 });
